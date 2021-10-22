@@ -19,7 +19,8 @@ const pool = require('./config_database.js');
 
 
 app.post('/', (req,res)=>{
-   let tablename = req.body.name;
+   let tablename = pool.escape(req.body.name);
+
    res.json({ user: 'example' });
 
     
