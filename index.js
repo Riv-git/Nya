@@ -1,6 +1,6 @@
 const express = require ('express');
 const app = express ();
-const pool = require('./config_database.js');
+
 app.use(express.static(__dirname + '/front'));
 var path = require('path');
 const bodyParser = require("body-parser");
