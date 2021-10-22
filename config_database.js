@@ -4,6 +4,7 @@ if(process.env.NODE_ENV!='production'){
     }
 let config_database = {
     connectionLimit : 10,
+    url:'//b5bd937adf901c:93ca7983@us-cdbr-east-04.cleardb.com/heroku_a6f0ae4fb2f818b?reconnect=true',
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b5bd937adf901c',
     password: '93ca7983',
