@@ -16,7 +16,7 @@ weather.setAPPID(appid);
 weather.setLang('co');
 
 
-const pool = require('./config_database.js');
+
 
 
 
@@ -26,7 +26,7 @@ const pool = require('./config_database.js');
 
 
 app.post('/', (req,res)=>{
-   let tablename = pool.escape(req.body.name);
+   let tablename = req.body.name;
    res.json({ user: 'example' });
    console.log(req.body); 
    
