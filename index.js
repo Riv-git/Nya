@@ -7,6 +7,13 @@ const bodyParser = require("body-parser");
 const { send } = require('process');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+var distance = require('distance-matrix-api');
+var weather = require('openweather-apis');
+const link = "https://api.openweathermap.org/data/2.5/weather?";
+distance.key('AlphaDMAufq2jjuOxPF3pTGC4JA8fmoNzYiacAjP');
+const appid='d7b7e5b12928806a189cffd3df38513d';
+weather.setAPPID(appid);
+weather.setLang('co');
 
 
 const pool = require('./config_database.js');
@@ -20,6 +27,7 @@ const pool = require('./config_database.js');
 
 app.post('/', (req,res)=>{
    let tablename = pool.escape(req.body.name);
+   
 
    res.json({ user: 'example' });
 
