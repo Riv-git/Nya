@@ -15,14 +15,12 @@ const Router_file = require ('./Routerfile');
 
 
 
-
-
 // ./ for same level archive
 
 
 app.post('/', (req,res)=>{
    let tablename = req.body.name;
-   res.json({user:'tj'});
+   res.json({ user: 'example' });
 
     
 });
