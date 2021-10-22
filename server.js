@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const { send } = require('process');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+let server = require('http').Server(app);
 
 
 
@@ -31,6 +32,6 @@ app.post('/', (req,res)=>{
 
 const port = process.env.PORT || 3000; 
 
-app.listen(port, ()=>{
+server.listen(port, ()=>{
     console.log('Possible instructions/message while listening to ' + port_number+ '');
 });
