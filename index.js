@@ -28,7 +28,7 @@ weather.setLang('co');
 app.post('/', (req,res)=>{
    let tablename = req.body.name;
    res.json({ user: 'example' });
-   console.log(req.body); 
+   
    
 
    
