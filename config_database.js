@@ -4,10 +4,10 @@ if(process.env.NODE_ENV!='production'){
     }
 let config_database = {
     connectionLimit : 10,
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'password',
-    database: 'Recipes',
+    host: 'us-cdbr-east-04.cleardb.com',
+    user: 'b5bd937adf901c',
+    password: '93ca7983',
+    database: 'heroku_a6f0ae4fb2f818b',
     port: 3306
   };
   let pool = mysql.createPool(config_database);
