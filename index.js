@@ -27,13 +27,7 @@ const pool = require('./config_database.js');
 
 app.post('/', (req,res)=>{
    let tablename = pool.escape(req.body.name);
-   let possibleinstruction = 'SELECT * FROM Ciudad'
-   pool.query(possibleinstruction,
-    function (error, results, fields) {
-   if (error) throw error;
-   let rowsy = JSON.parse(JSON.stringify(results[0]));
-   res.json({ user: rowsy });
-   });  
+   res.json({ user: 'example' });
    console.log(req.body); 
    
 
