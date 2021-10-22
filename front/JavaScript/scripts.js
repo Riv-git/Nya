@@ -17,7 +17,7 @@ async function tryadsij() {
     })
    })
   const jso = await res.json();
-  document.getElementById("Nombre").value=jso.user.nombre;
+  document.getElementById("Nombre").value=jso.user;
   console.log(jso);
 }
 
