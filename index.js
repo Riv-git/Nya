@@ -8,5 +8,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
     let tablename = req.body.name;
+    res.json({ user: 'tj' });
+
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
