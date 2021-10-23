@@ -8,7 +8,7 @@ function muestraMensaje() {
 
 
 
-async function function_name() {
+async function tryadsij() {
   const res = await fetch('/',{
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
