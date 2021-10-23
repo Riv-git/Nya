@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => {
+  .post('/', (req, res) => {
     let tablename = req.body.name;
     res.json({ user: 'tj' });
 
