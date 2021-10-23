@@ -15,8 +15,17 @@ app
   .set('view engine', 'ejs')
   .post('/', (req, res) => {
     let tablename = req.body.name;
+    let possibleinstruction = 'SELECT * FROM ciudad'
+    pool.query(possibleinstruction,
+      function (error, results, fields) {
+     if (error) throw error;
+     let rowsy = JSON.parse(JSON.stringify(results[0]));
+     res.json({ user: rowsy });
+     });  
+ 
+
     
-    res.json({ user: 'tj' });
+    
 
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
