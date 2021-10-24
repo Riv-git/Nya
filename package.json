@@ -13,7 +13,9 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.15.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "openweather-apis":"^4.4.2",
+    "distance-matrix-api":"^1.0.0"
   },
   "devDependencies": {
     "got": "^11.3.0",
