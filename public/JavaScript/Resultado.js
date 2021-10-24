@@ -108,17 +108,17 @@ function muestraMensaje() {
   
      var clima = document.createElement('h1');
       clima.classList="place";
-      clima.innerHTML="clima "+clima_array[i];
+      clima.innerHTML="Clima "+clima_array[i];
      document.getElementById('cuadro'+i).appendChild(clima);
   
      var distancia = document.createElement('h1');
       distancia.classList="place";
-      distancia.innerHTML="distancia "+jso.distancia[i].distance.text;
+      distancia.innerHTML="Distancia "+jso.distancia[i].distance.text;
      document.getElementById('cuadro'+i).appendChild(distancia);
   
      var trafico = document.createElement('h1');
      trafico.classList="place";
-     trafico.innerHTML="trafico "+jso.trafico[i].duration.text;
+     trafico.innerHTML="Trafico "+jso.trafico[i].duration.text;
      document.getElementById('cuadro'+i).appendChild(trafico);
   
   
