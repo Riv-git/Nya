@@ -93,4 +93,69 @@ app
     
 
   })
+
+  app.post('/Resultado', (req,res)=>{  
+    let resultadosdelarespuesta = req.app.get('answer')
+    let location1= req.app.get('localizacion1')
+    let location2 = req.app.get('localizacion2')
+    let tiempomax = req.app.get('tiempo')
+    let int_location1=parseFloat(location1, 10);
+    let int_location2=parseFloat(location2, 10);
+    
+    var origins = [location1 + ','+ location2];
+    
+    console.log(origins);
+    var destinations = ['0,0'];
+    let distancia = ['0km'];
+    let trafico = ['0.1 min'];
+    
+    pool.query(resultadosdelarespuesta,
+        function (error, results, fields) {
+       if (error) throw error;
+       const location_array=[location1];
+       
+        let destinations2=['0,0'];
+        let latitude=[];
+        let longitude=[];
+        let locations = ['51.5085, -0.1257', '4.910263401,71.209187'];
+        for (let i of Object.keys(results)){
+            destinations2[i]=results[i].localizacion;
+            locations[i]=results[i].localizacion;
+        }
+        let answers_array=[];
+        let m=-1;
+        console.log(locations);
+
+        distance.matrix(origins, destinations2, function (err, distances) {
+          if (!err)
+          for (let i = 0; i < locations.length; i++){
+            locations[i]=locations[i].split(',');
+            latitude[i]=locations[i][0];
+            longitude[i]=locations[i][1];
+            latitude[i]=parseFloat( latitude[i]);
+            longitude[i]=parseFloat(longitude[i]);
+            weather.setCoordinate(latitude[i], longitude[i]);
+            weather.getDescription(function(err, desc){
+                answers_array[i]=desc;
+                
+                
+                if (i===locations.length-1){
+                    distancia= distances.rows[0].elements ;
+                    trafico=distances.rows[0].elements;
+                    res.json({results,distancia,trafico, tiempomax, answers_array});
+                }   
+            });
+            m++;
+        }
+            
+        })
+       
+       
+    });  
+       console.log(req.body.latitud); 
+       console.log(req.body.longitud); 
+    
+
+    
+})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
