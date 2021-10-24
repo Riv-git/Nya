@@ -103,6 +103,38 @@ app
     let int_location2=parseFloat(location2, 10);
     
     var origins = [location1 + ','+ location2];
+    if (location1==="no latitude"){
+      var destinations = ['0,0'];
+  let distancia = ['0km'];
+  let trafico = ['0.1 min'];
+  
+  pool.query(resultadosdelarespuesta,
+      function (error, results, fields) {
+     if (error) throw error;
+     const location_array=[location1];
+     
+      let destinations2=['0,0'];
+      let latitude=[];
+      let longitude=[];
+      let locations = ['51.5085, -0.1257', '4.910263401,71.209187'];
+      
+      for (let i of Object.keys(results)){
+          destinations2[i]=results[i].localizacion;
+          locations[i]=results[i].localizacion;
+          
+      }
+      let blacklists2e9="no location";
+      
+      res.json({results,blacklists2e9});
+      
+     
+     
+  });  
+     
+  
+
+  }
+  else {
     
     console.log(origins);
     var destinations = ['0,0'];
@@ -155,7 +187,7 @@ app
        console.log(req.body.latitud); 
        console.log(req.body.longitud); 
     
-
+  }
     
 })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

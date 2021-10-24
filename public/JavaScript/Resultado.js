@@ -36,6 +36,36 @@ function muestraMensaje() {
       })
      })
     const jso = await res.json();
+    if (jso.blacklists2e9==="no location"){
+      for (let i of Object.keys(jso.results)){
+      var newdiv = document.createElement('div');
+      newdiv.id='cuadro'+i;
+      newdiv.classList="rectangle-1 wrap title-area";
+      document.getElementById('posiblesrespuestas').appendChild(newdiv);
+  
+      var title = document.createElement('h1');
+      title.classList="title";
+      title.innerHTML=jso.results[i].nombreActividad;
+     document.getElementById('cuadro'+i).appendChild(title);
+  
+     var local = document.createElement('h1');
+      local.classList="place";
+      local.innerHTML="Local "+jso.results[i].nombreLocal;
+     document.getElementById('cuadro'+i).appendChild(local);
+  
+     var descripcion = document.createElement('h1');
+      descripcion.classList="place";
+      descripcion.innerHTML="Descripcion "+jso.results[i].descripcion;
+     document.getElementById('cuadro'+i).appendChild(descripcion);
+  
+     var precio = document.createElement('h1');
+      precio.classList="place";
+      precio.innerHTML="Precio "+jso.results[i].precio;
+     document.getElementById('cuadro'+i).appendChild(precio);
+      }
+    }
+  
+    else {
     
     
     for (let i of Object.keys(jso.results)){
@@ -97,7 +127,7 @@ function muestraMensaje() {
   
      } 
      
-    
+    }
     
     
     
