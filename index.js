@@ -9,6 +9,13 @@ const bodyParser = require("body-parser");
 const { send } = require('process');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+var distance = require('distance-matrix-api');
+var weather = require('openweather-apis');
+const link = "https://api.openweathermap.org/data/2.5/weather?";
+distance.key('AlphaDMAufq2jjuOxPF3pTGC4JA8fmoNzYiacAjP');
+const appid='d7b7e5b12928806a189cffd3df38513d';
+weather.setAPPID(appid);
+weather.setLang('co');
 
 app
   .set('views', path.join(__dirname, 'views'))
@@ -74,7 +81,12 @@ app
 
     
     let possibleinstruction = "SELECT a.nombreActividad, l.nombreLocal, a.descripcion, a.precio, a.tiempo, l.localizacion FROM actividad a left join local l on l.idlocal=a.idLocal left join ciudad c on c.idCiudad=l.idCiudad WHERE a.precio<="+int_valor_maximo+" and a.precio>="+ int_valor_minimo +" and a.tiempo<="+int_tiempo_maximo+" and a.tiempo>="+int_tiempo_minimo + " and a.tipoActividad="+actividad+" AND c.nombre = "+ ciudad + " ORDER BY a.precio desc" ;
-    res.json({ user: possibleinstruction }); 
+    
+    req.app.set('tiempo', int_tiempo_maximo)
+    req.app.set('answer', possibleinstruction.toString())
+    req.app.set('localizacion1', localizacion1)
+    req.app.set('localizacion2', localizacion2)
+    return res.redirect('/Resultado');
  
 
     
