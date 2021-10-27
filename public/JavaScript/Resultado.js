@@ -70,6 +70,8 @@ function muestraMensaje() {
         resposgh.innerHTML="sin respuestas para el formulario con tus especificaciones"
         document.getElementById('posiblesrespuestas').appendChild(resposgh);
         }
+        var element = document.getElementById("nombre");
+        element.classList.add("small");
     }
   
     else {
