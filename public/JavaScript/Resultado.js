@@ -140,6 +140,8 @@ function muestraMensaje() {
       resposgh.innerHTML="sin respuestas para el formulario con especificaciones de esas variables con esos atributos y valores"
       document.getElementById('posiblesrespuestas').appendChild(resposgh);
       }
+      var element = document.getElementById("nombre");
+      element.classList.add("smalll");
     
     
     
