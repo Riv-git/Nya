@@ -66,7 +66,7 @@ async function tryadsij() {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         ciudad: document.getElementById("ciudad").value,
-        tiempo: document.getElementById("tiempo").value,
+        
         fecha: document.getElementById("fecha").value,
         valor_minimo: document.getElementById("valorminimo").value,
         valor_maximo: document.getElementById("valormaximo").value,
