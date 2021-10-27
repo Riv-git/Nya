@@ -65,11 +65,7 @@ function muestraMensaje() {
       precio.innerHTML="Precio "+jso.results[i].precio;
      document.getElementById('cuadro'+i).appendChild(precio);
       }
-      if (jso.results[0]==null){
-        var resposgh = document.createElement('h1');
-        resposgh.innerHTML="sin respuestas para el formulario con tus especificaciones"
-        document.getElementById('posiblesrespuestas').appendChild(resposgh);
-        }
+      
         var element = document.getElementById("nombre");
         element.classList.add("small");
     }
@@ -139,8 +135,12 @@ function muestraMensaje() {
     }
     if (jso.results[0]==null){
       var resposgh = document.createElement('h1');
-      resposgh.innerHTML="sin respuestas para el formulario con especificaciones de esas variables con esos atributos y valores"
+      resposgh.innerHTML="no encontramos resultados con esos criterios pero encontramos esta manzana"
       document.getElementById('posiblesrespuestas').appendChild(resposgh);
+      var newimage_apple = document.createElement('img');
+            newimage_apple.src = 
+'https://www.maxpixel.net/static/photo/2x/Food-Icon-Fruit-Apple-Vector-Symbol-Gui-Shop-4105741.jpg';
+document.getElementById('posiblesrespuestas').appendChild(newimage_apple);
       }
       var element = document.getElementById("nombre");
       element.classList.add("small");
