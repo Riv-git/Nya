@@ -33,6 +33,10 @@ var x = document.getElementById("demo");
 var y = document.getElementById("demo2");
 
 function getLocation() {
+  
+  var element = document.getElementById("botonlocalizar");
+  element.classList.add("cargando");
+  document.getElementById("botonlocalizar").innerHTML="cargando localizacion"
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
@@ -43,7 +47,8 @@ function getLocation() {
 function showPosition(position) {
   x.value = position.coords.latitude;
   y.value =  position.coords.longitude;
-  
+  var element = document.getElementById("botonlocalizar");
+  element.classList.remove("cargando");
   document.getElementById("botonlocalizar").innerHTML="localizacion lista"
 
 }
