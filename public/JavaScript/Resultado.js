@@ -135,12 +135,9 @@ function muestraMensaje() {
     }
     if (jso.results[0]==null){
       var resposgh = document.createElement('h1');
-      resposgh.innerHTML="no encontramos resultados con esos criterios pero encontramos esta manzana"
+      resposgh.innerHTML="no encontramos resultados con esos criterios intentalo de nuevo"
       document.getElementById('posiblesrespuestas').appendChild(resposgh);
-      var newimage_apple = document.createElement('img');
-            newimage_apple.src = 
-'https://www.maxpixel.net/static/photo/2x/Food-Icon-Fruit-Apple-Vector-Symbol-Gui-Shop-4105741.jpg';
-document.getElementById('posiblesrespuestas').appendChild(newimage_apple);
+      
       }
       var element = document.getElementById("nombre");
       element.classList.add("small");
