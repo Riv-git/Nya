@@ -63,6 +63,11 @@ function muestraMensaje() {
       precio.innerHTML="Precio "+jso.results[i].precio;
      document.getElementById('cuadro'+i).appendChild(precio);
       }
+      if (jso.results[0]==null){
+        var resposgh = document.createElement('h1');
+        resposgh.innerHTML="sin respuestas para el formulario con tus especificaciones"
+        document.getElementById('posiblesrespuestas').appendChild(resposgh);
+        }
     }
   
     else {
@@ -128,6 +133,11 @@ function muestraMensaje() {
      } 
      
     }
+    if (jso.results[0]==null){
+      var resposgh = document.createElement('h1');
+      resposgh.innerHTML="sin respuestas para el formulario con especificaciones de esas variables con esos atributos y valores"
+      document.getElementById('posiblesrespuestas').appendChild(resposgh);
+      }
     
     
     
