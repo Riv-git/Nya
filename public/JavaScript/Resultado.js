@@ -141,7 +141,7 @@ function muestraMensaje() {
       document.getElementById('posiblesrespuestas').appendChild(resposgh);
       }
       var element = document.getElementById("nombre");
-      element.classList.add("smalll");
+      element.classList.add("small");
     
     
     
