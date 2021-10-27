@@ -80,7 +80,7 @@ app
 
 
     
-    let possibleinstruction = "SELECT a.nombreActividad, l.nombreLocal, a.descripcion, a.precio, a.tiempo, l.localizacion FROM actividad a left join local l on l.idlocal=a.idLocal left join ciudad c on c.idCiudad=l.idCiudad WHERE a.precio<="+int_valor_maximo+" and a.precio>="+ int_valor_minimo +" and a.tiempo<="+int_tiempo_maximo+" and a.tiempo>="+int_tiempo_minimo + " and a.tipoActividad="+actividad+" AND c.nombre = "+ ciudad + " ORDER BY a.precio desc" ;
+    let possibleinstruction = "SELECT a.nombreActividad, l.nombreLocal, a.descripcion, a.precio, a.tiempo, l.localizacion FROM actividad a left join local l on l.idlocal=a.idLocal left join ciudad c on c.idCiudad=l.idCiudad WHERE a.precio<="+int_valor_maximo+" and a.precio>="+ int_valor_minimo +" and a.tiempo<="+int_tiempo_maximo+" and a.tiempo>="+int_tiempo_minimo + " and "+actividad+" AND c.nombre = "+ ciudad + " ORDER BY a.precio desc" ;
     
     req.app.set('tiempo', int_tiempo_maximo)
     req.app.set('answer', possibleinstruction.toString())

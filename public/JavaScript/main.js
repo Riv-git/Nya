@@ -58,11 +58,11 @@ function showPosition(position) {
 async function tryadsij() {
     var actividad = document.getElementsByClassName("Actividad");
     let i;
-    let actividad_texto_instruccioon = '( "sdnl" ';
+    let actividad_texto_instruccioon = '( a.tipoActividad="otros" ';
     console.log(document.getElementById("demo2").value);
     for (i = 0; i < actividad.length; i++) {
         if(actividad[i].checked == true){
-  actividad_texto_instruccioon= actividad_texto_instruccioon +  ' OR  "' + actividad[i].value + '"  ' ;}
+  actividad_texto_instruccioon= actividad_texto_instruccioon +  ' OR  a.tipoActividad="' + actividad[i].value + '"  ' ;}
     }
     actividad_texto_instruccioon=actividad_texto_instruccioon + ")";
     actividad_texto_instruccioon=actividad_texto_instruccioon
