@@ -24,7 +24,9 @@ function muestraMensaje() {
     let lat1=0;
     let long1=0;
     console.log(lat1);
-    
+    var element = document.getElementById("nombre");
+    element.classList.add("cargando2");
+    document.getElementById("nombre").innerHTML="cargando las busquedas"
     
     
     const res = await fetch('/Resultado',{

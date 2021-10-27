@@ -281,6 +281,31 @@ display: inline-block;
       transform: rotate(360deg);
     }
   }
+
+  .cargando2 {
+    
+    width: 25%;
+    height: 25%;
+  }
+  .cargando2:after {
+    content: "";
+    display: inline-block;
+    width: 1%;
+    height: 1%;
+    margin: 2%;
+    border-radius: 0%;
+    border: 6px solid rgb(8, 58, 221);
+    border-color: rgb(18, 67, 226) transparent rgb(19, 26, 230) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   
   @import url("https://fonts.googleapis.com/css?family=Roboto:400");
 
