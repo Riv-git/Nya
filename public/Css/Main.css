@@ -245,6 +245,7 @@ display: inline-block;
 }
 .small {
     font-size:xx-small;
+    display:none;
 }
 
 .title-area {
